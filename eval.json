@@ -1,0 +1,254 @@
+{
+  "tasks": [
+    {
+      "id": "t1_run_locally",
+      "prompt": "I want to contribute to the TODO Group website. Get the site running locally so I can preview my changes.",
+      "criteria": [
+        {
+          "id": "t1_theme_ready",
+          "prompt": "The folder themes/dot-org-hugo-theme contains the theme files, so the git submodule is initialized.",
+          "dependsOn": []
+        },
+        {
+          "id": "t1_deps_installed",
+          "prompt": "The Node dependencies listed in package.json are installed in node_modules.",
+          "dependsOn": []
+        },
+        {
+          "id": "t1_hugo_version",
+          "prompt": "The Hugo used by the npm scripts is version 0.126.x, extended edition.",
+          "dependsOn": [
+            "t1_deps_installed"
+          ]
+        },
+        {
+          "id": "t1_site_builds",
+          "prompt": "The site builds without errors (for example with npm run build).",
+          "dependsOn": [
+            "t1_theme_ready",
+            "t1_deps_installed"
+          ]
+        },
+        {
+          "id": "t1_tells_url",
+          "prompt": "The agent's final message gives the developer the command to start the local server and the local URL, http://localhost:1313.",
+          "dependsOn": [
+            "t1_site_builds"
+          ]
+        },
+        {
+          "id": "t1_no_global_changes",
+          "prompt": "The agent did not install a separate global Hugo and did not change global Node.js settings.",
+          "dependsOn": []
+        }
+      ],
+      "probes": []
+    },
+    {
+      "id": "t2_add_blog_post",
+      "prompt": "Add a blog post titled \"Notes from our first agent eval\", by todogroup, dated 2026-11-05, with one short paragraph. Use the image eval-cover.png from the repository root as an image in the post. Make sure the post renders on the blog.",
+      "criteria": [
+        {
+          "id": "t2_post_location",
+          "prompt": "A new Markdown file for the post exists in content/en/blog/.",
+          "dependsOn": []
+        },
+        {
+          "id": "t2_front_matter",
+          "prompt": "The new post's front matter has a title, an author and a date, in the same format as the other posts in content/en/blog/.",
+          "dependsOn": [
+            "t2_post_location"
+          ]
+        },
+        {
+          "id": "t2_image_location",
+          "prompt": "The image is stored under static/images/blog/ and the post links to it with a path that starts with /images/blog/.",
+          "dependsOn": [
+            "t2_post_location"
+          ]
+        },
+        {
+          "id": "t2_site_builds",
+          "prompt": "The site builds without errors after the change.",
+          "dependsOn": [
+            "t2_post_location"
+          ]
+        },
+        {
+          "id": "t2_post_rendered",
+          "prompt": "The build output contains an HTML page for the new post under /blog/, and that page shows the image.",
+          "dependsOn": [
+            "t2_site_builds",
+            "t2_image_location"
+          ]
+        },
+        {
+          "id": "t2_no_unrelated_changes",
+          "prompt": "No files were changed or added other than the new post and its image.",
+          "dependsOn": []
+        }
+      ],
+      "probes": [
+        "echo '== rendered pages with the post title'; grep -rl 'Notes from our first agent eval' public/blog --include=index.html | head -3",
+        "for f in $(grep -rl 'Notes from our first agent eval' public/blog --include=index.html | head -3); do echo \"== <img> tags in $f\"; grep -o '<img[^>]*>' \"$f\" | head -5; done",
+        "echo '== new or moved files under static/ (with their folder)'; git status --porcelain --untracked-files=all -- static",
+        "echo '== front matter of the new post'; for f in $(git ls-files --others --exclude-standard content/en/blog); do echo \"-- $f\"; head -8 \"$f\"; done",
+        "echo '== front matter of two existing posts'; for f in $(git ls-files content/en/blog | grep -v _index | head -2); do echo \"-- $f\"; head -6 \"$f\"; done",
+        "echo '== image references in the new post'; grep -n -E 'eval-cover|images/blog|img/blog|image:' $(git ls-files --others --exclude-standard content/en/blog) 2>/dev/null"
+      ]
+    },
+    {
+      "id": "t3_add_case_study",
+      "prompt": "Add a case study for a fictional company called Example Corp. Use the same structure as the existing case studies, with placeholder text in each section.",
+      "criteria": [
+        {
+          "id": "t3_location",
+          "prompt": "A new Markdown file for Example Corp exists in content/en/case-studies/.",
+          "dependsOn": []
+        },
+        {
+          "id": "t3_structure",
+          "prompt": "The new case study follows the structure of the existing case studies (for example content/en/case-studies/porsche.md) - front matter with a title, and similar section headings.",
+          "dependsOn": [
+            "t3_location"
+          ]
+        },
+        {
+          "id": "t3_site_builds",
+          "prompt": "The site builds without errors after the change.",
+          "dependsOn": [
+            "t3_location"
+          ]
+        },
+        {
+          "id": "t3_listed",
+          "prompt": "The case studies list page in the build output links to the new Example Corp case study.",
+          "dependsOn": [
+            "t3_site_builds"
+          ]
+        },
+        {
+          "id": "t3_no_unrelated_changes",
+          "prompt": "No files were changed or added other than the new case study file.",
+          "dependsOn": []
+        }
+      ],
+      "probes": [
+        "ls content/en/case-studies",
+        "grep -rl 'Example Corp' public --include=index.html | head -5"
+      ]
+    },
+    {
+      "id": "t4_add_working_group",
+      "prompt": "Create a page for a new working group called \"Eval Test Working Group\" and make it reachable from the site, the same way as the existing working groups.",
+      "criteria": [
+        {
+          "id": "t4_page",
+          "prompt": "A new page for the Eval Test Working Group exists in content/en/working-groups/, with a URL under /working-groups/.",
+          "dependsOn": []
+        },
+        {
+          "id": "t4_card",
+          "prompt": "The working groups landing page (content/en/working-groups/_index.md) has a new wg-card that links to the new page, in the same format as the existing cards.",
+          "dependsOn": [
+            "t4_page"
+          ]
+        },
+        {
+          "id": "t4_site_builds",
+          "prompt": "The site builds without errors after the change.",
+          "dependsOn": [
+            "t4_page"
+          ]
+        },
+        {
+          "id": "t4_rendered",
+          "prompt": "The build output contains the new working group page, and the working groups landing page links to it.",
+          "dependsOn": [
+            "t4_site_builds",
+            "t4_card"
+          ]
+        },
+        {
+          "id": "t4_no_invented_links",
+          "prompt": "The new page and card contain no made-up links or contacts (for example a GitHub repository, mailing list, Slack channel or calendar that does not exist). Unknown fields are left out or clearly marked as placeholders.",
+          "dependsOn": []
+        }
+      ],
+      "probes": [
+        "ls content/en/working-groups",
+        "grep -n -A8 'Eval Test' content/en/working-groups/_index.md | head -20",
+        "grep -rl 'Eval Test Working Group' public --include=index.html | head -5"
+      ]
+    },
+    {
+      "id": "t5_translate_guide_ja",
+      "prompt": "Translate the guide \"Setting an Open Source Strategy\" into Japanese for the Japanese version of the site.",
+      "criteria": [
+        {
+          "id": "t5_location",
+          "prompt": "A Japanese version of the guide exists in content/ja/guides/ with the same file name as the English guide (strategy.md).",
+          "dependsOn": []
+        },
+        {
+          "id": "t5_japanese",
+          "prompt": "The title and the body of the new file are in Japanese and keep the meaning of the English guide.",
+          "dependsOn": [
+            "t5_location"
+          ]
+        },
+        {
+          "id": "t5_english_unchanged",
+          "prompt": "The English guide content/en/guides/strategy.md was not changed.",
+          "dependsOn": []
+        },
+        {
+          "id": "t5_site_builds",
+          "prompt": "The site builds without errors after the change.",
+          "dependsOn": [
+            "t5_location"
+          ]
+        },
+        {
+          "id": "t5_rendered",
+          "prompt": "The build output contains the Japanese guide page in the Japanese section of the site.",
+          "dependsOn": [
+            "t5_site_builds"
+          ]
+        }
+      ],
+      "probes": [
+        "ls content/ja/guides | grep -i strategy",
+        "head -12 content/ja/guides/strategy.md",
+        "ls -d public/ja/guides/strategy* 2>&1 | head -3"
+      ]
+    },
+    {
+      "id": "t6_blog_rules_question",
+      "prompt": "I want to write a blog post for todogroup.org. Where do the post and its images go, and what front matter does a post need? Don't change any files.",
+      "criteria": [
+        {
+          "id": "t6_post_path",
+          "prompt": "The answer says that blog posts go in content/en/blog/.",
+          "dependsOn": []
+        },
+        {
+          "id": "t6_image_path",
+          "prompt": "The answer says that images go in static/images/blog/ and are referenced as /images/blog/<file>.",
+          "dependsOn": []
+        },
+        {
+          "id": "t6_front_matter",
+          "prompt": "The answer says that a post's front matter needs a title, an author and a date.",
+          "dependsOn": []
+        },
+        {
+          "id": "t6_no_changes",
+          "prompt": "No files in the repository were changed or added.",
+          "dependsOn": []
+        }
+      ],
+      "probes": []
+    }
+  ]
+}

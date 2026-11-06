@@ -1,0 +1,366 @@
+[
+  {
+    "_task": "t1_run_locally",
+    "scenario": {
+      "task": "I want to contribute to the TODO Group website. Get the site running locally so I can preview my changes.",
+      "criteria": [
+        "t1_theme_ready",
+        "t1_deps_installed",
+        "t1_hugo_version",
+        "t1_site_builds",
+        "t1_tells_url",
+        "t1_no_global_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t1_run_locally",
+    "scenario": {
+      "task": "I want to contribute to the TODO Group website. Get the site running locally so I can preview my changes.",
+      "criteria": [
+        "t1_theme_ready",
+        "t1_deps_installed",
+        "t1_hugo_version",
+        "t1_site_builds",
+        "t1_tells_url",
+        "t1_no_global_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t1_run_locally",
+    "scenario": {
+      "task": "I want to contribute to the TODO Group website. Get the site running locally so I can preview my changes.",
+      "criteria": [
+        "t1_theme_ready",
+        "t1_deps_installed",
+        "t1_hugo_version",
+        "t1_site_builds",
+        "t1_tells_url",
+        "t1_no_global_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t1_run_locally",
+    "scenario": {
+      "task": "I want to contribute to the TODO Group website. Get the site running locally so I can preview my changes.",
+      "criteria": [
+        "t1_theme_ready",
+        "t1_deps_installed",
+        "t1_hugo_version",
+        "t1_site_builds",
+        "t1_tells_url",
+        "t1_no_global_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t2_add_blog_post",
+    "scenario": {
+      "task": "Add a blog post titled \"Notes from our first agent eval\", by todogroup, dated 2026-11-05, with one short paragraph. Use the image eval-cover.png from the repository root as an image in the post. Make sure the post renders on the blog.",
+      "criteria": [
+        "t2_post_location",
+        "t2_front_matter",
+        "t2_image_location",
+        "t2_site_builds",
+        "t2_post_rendered",
+        "t2_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t2_add_blog_post",
+    "scenario": {
+      "task": "Add a blog post titled \"Notes from our first agent eval\", by todogroup, dated 2026-11-05, with one short paragraph. Use the image eval-cover.png from the repository root as an image in the post. Make sure the post renders on the blog.",
+      "criteria": [
+        "t2_post_location",
+        "t2_front_matter",
+        "t2_image_location",
+        "t2_site_builds",
+        "t2_post_rendered",
+        "t2_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t2_add_blog_post",
+    "scenario": {
+      "task": "Add a blog post titled \"Notes from our first agent eval\", by todogroup, dated 2026-11-05, with one short paragraph. Use the image eval-cover.png from the repository root as an image in the post. Make sure the post renders on the blog.",
+      "criteria": [
+        "t2_post_location",
+        "t2_front_matter",
+        "t2_image_location",
+        "t2_site_builds",
+        "t2_post_rendered",
+        "t2_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t2_add_blog_post",
+    "scenario": {
+      "task": "Add a blog post titled \"Notes from our first agent eval\", by todogroup, dated 2026-11-05, with one short paragraph. Use the image eval-cover.png from the repository root as an image in the post. Make sure the post renders on the blog.",
+      "criteria": [
+        "t2_post_location",
+        "t2_front_matter",
+        "t2_image_location",
+        "t2_site_builds",
+        "t2_post_rendered",
+        "t2_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t3_add_case_study",
+    "scenario": {
+      "task": "Add a case study for a fictional company called Example Corp. Use the same structure as the existing case studies, with placeholder text in each section.",
+      "criteria": [
+        "t3_location",
+        "t3_structure",
+        "t3_site_builds",
+        "t3_listed",
+        "t3_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t3_add_case_study",
+    "scenario": {
+      "task": "Add a case study for a fictional company called Example Corp. Use the same structure as the existing case studies, with placeholder text in each section.",
+      "criteria": [
+        "t3_location",
+        "t3_structure",
+        "t3_site_builds",
+        "t3_listed",
+        "t3_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t3_add_case_study",
+    "scenario": {
+      "task": "Add a case study for a fictional company called Example Corp. Use the same structure as the existing case studies, with placeholder text in each section.",
+      "criteria": [
+        "t3_location",
+        "t3_structure",
+        "t3_site_builds",
+        "t3_listed",
+        "t3_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t3_add_case_study",
+    "scenario": {
+      "task": "Add a case study for a fictional company called Example Corp. Use the same structure as the existing case studies, with placeholder text in each section.",
+      "criteria": [
+        "t3_location",
+        "t3_structure",
+        "t3_site_builds",
+        "t3_listed",
+        "t3_no_unrelated_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t4_add_working_group",
+    "scenario": {
+      "task": "Create a page for a new working group called \"Eval Test Working Group\" and make it reachable from the site, the same way as the existing working groups.",
+      "criteria": [
+        "t4_page",
+        "t4_card",
+        "t4_site_builds",
+        "t4_rendered",
+        "t4_no_invented_links"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t4_add_working_group",
+    "scenario": {
+      "task": "Create a page for a new working group called \"Eval Test Working Group\" and make it reachable from the site, the same way as the existing working groups.",
+      "criteria": [
+        "t4_page",
+        "t4_card",
+        "t4_site_builds",
+        "t4_rendered",
+        "t4_no_invented_links"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t4_add_working_group",
+    "scenario": {
+      "task": "Create a page for a new working group called \"Eval Test Working Group\" and make it reachable from the site, the same way as the existing working groups.",
+      "criteria": [
+        "t4_page",
+        "t4_card",
+        "t4_site_builds",
+        "t4_rendered",
+        "t4_no_invented_links"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t4_add_working_group",
+    "scenario": {
+      "task": "Create a page for a new working group called \"Eval Test Working Group\" and make it reachable from the site, the same way as the existing working groups.",
+      "criteria": [
+        "t4_page",
+        "t4_card",
+        "t4_site_builds",
+        "t4_rendered",
+        "t4_no_invented_links"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t5_translate_guide_ja",
+    "scenario": {
+      "task": "Translate the guide \"Setting an Open Source Strategy\" into Japanese for the Japanese version of the site.",
+      "criteria": [
+        "t5_location",
+        "t5_japanese",
+        "t5_english_unchanged",
+        "t5_site_builds",
+        "t5_rendered"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t5_translate_guide_ja",
+    "scenario": {
+      "task": "Translate the guide \"Setting an Open Source Strategy\" into Japanese for the Japanese version of the site.",
+      "criteria": [
+        "t5_location",
+        "t5_japanese",
+        "t5_english_unchanged",
+        "t5_site_builds",
+        "t5_rendered"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t5_translate_guide_ja",
+    "scenario": {
+      "task": "Translate the guide \"Setting an Open Source Strategy\" into Japanese for the Japanese version of the site.",
+      "criteria": [
+        "t5_location",
+        "t5_japanese",
+        "t5_english_unchanged",
+        "t5_site_builds",
+        "t5_rendered"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t5_translate_guide_ja",
+    "scenario": {
+      "task": "Translate the guide \"Setting an Open Source Strategy\" into Japanese for the Japanese version of the site.",
+      "criteria": [
+        "t5_location",
+        "t5_japanese",
+        "t5_english_unchanged",
+        "t5_site_builds",
+        "t5_rendered"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t6_blog_rules_question",
+    "scenario": {
+      "task": "I want to write a blog post for todogroup.org. Where do the post and its images go, and what front matter does a post need? Don't change any files.",
+      "criteria": [
+        "t6_post_path",
+        "t6_image_path",
+        "t6_front_matter",
+        "t6_no_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t6_blog_rules_question",
+    "scenario": {
+      "task": "I want to write a blog post for todogroup.org. Where do the post and its images go, and what front matter does a post need? Don't change any files.",
+      "criteria": [
+        "t6_post_path",
+        "t6_image_path",
+        "t6_front_matter",
+        "t6_no_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-with-agents-md"
+  },
+  {
+    "_task": "t6_blog_rules_question",
+    "scenario": {
+      "task": "I want to write a blog post for todogroup.org. Where do the post and its images go, and what front matter does a post need? Don't change any files.",
+      "criteria": [
+        "t6_post_path",
+        "t6_image_path",
+        "t6_front_matter",
+        "t6_no_changes"
+      ]
+    },
+    "workerType": "coder-acp-copilot",
+    "codebase": "todogroup-without-agents-md"
+  },
+  {
+    "_task": "t6_blog_rules_question",
+    "scenario": {
+      "task": "I want to write a blog post for todogroup.org. Where do the post and its images go, and what front matter does a post need? Don't change any files.",
+      "criteria": [
+        "t6_post_path",
+        "t6_image_path",
+        "t6_front_matter",
+        "t6_no_changes"
+      ]
+    },
+    "workerType": "coder-acp-claude-code",
+    "codebase": "todogroup-without-agents-md"
+  }
+]

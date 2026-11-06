@@ -1,0 +1,14 @@
+[
+  {
+    "name": "todogroup-eval-copilot",
+    "description": "GitHub Copilot CLI for the todogroup.org AX eval. No MCP servers, skills or extensions.",
+    "workerType": "coder-acp-copilot",
+    "model": "REPLACE_WITH_MODEL"
+  },
+  {
+    "name": "todogroup-eval-claude-code",
+    "description": "Claude Code CLI for the todogroup.org AX eval. No MCP servers, skills or extensions.",
+    "workerType": "coder-acp-claude-code",
+    "model": "REPLACE_WITH_MODEL"
+  }
+]
